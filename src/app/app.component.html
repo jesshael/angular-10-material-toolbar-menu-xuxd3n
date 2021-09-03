@@ -10,8 +10,8 @@
 
   <mat-form-field>
     <mat-label>Favorite color</mat-label>
-    <mat-select required [(value)]="selected">
-      <mat-option *ngFor="let color of colors" [value]="color">
+    <mat-select required [(value)]="selectedValue">
+      <mat-option *ngFor="let color of colors" [value]="color.name">
         {{color.name}}
       </mat-option>
     </mat-select>
@@ -23,7 +23,7 @@
   Form values:
   <ul>
     <li>Username: {{profile.controls.username.value}}</li>
-    <li>Color: {{selected}}</li>
+    <li>Color: {{selectedValue}}</li>
   </ul>
 
 </form>
