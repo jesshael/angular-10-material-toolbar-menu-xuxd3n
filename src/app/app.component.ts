@@ -39,10 +39,6 @@ export class AppComponent {
 
   ngOnItit() {}
 
-  changeColor(data) {
-    console.log('Value: ' + data);
-  }
-
   public profile: FormGroup = new FormGroup({
     color: new FormControl(null, [Validators.required]),
     username: new FormControl(
@@ -56,5 +52,9 @@ export class AppComponent {
     control: AbstractControl
   ): Observable<ValidationErrors | null> {
     return of(null);
+  }
+
+  get username() {
+    return this.username.get('userName');
   }
 }
