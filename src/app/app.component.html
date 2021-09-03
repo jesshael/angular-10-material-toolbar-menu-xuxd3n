@@ -1,0 +1,29 @@
+<form [formGroup]="profile">
+
+  <mat-form-field>
+    <mat-label>Username</mat-label>
+    <input matInput required formControlName="username" placeholder="5 characters minimum">
+    <mat-error>Invalid value</mat-error>
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field>
+    <mat-label>Favorite color</mat-label>
+    <mat-select required>
+      <mat-option *ngFor="let color of colors" [value]="color">
+        {{color.name}}
+      </mat-option>
+    </mat-select>
+    <mat-error>Invalid value</mat-error>
+  </mat-form-field>
+
+  <hr>
+
+  Form values:
+  <ul>
+    <li>Username: {{profile.controls.username.value}}</li>
+    <li>Color: {{profile.controls.color.value}}</li>
+  </ul>
+
+</form>
